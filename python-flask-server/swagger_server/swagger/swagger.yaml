@@ -1,0 +1,43 @@
+---
+swagger: "2.0"
+info:
+  description: "A Simple API Server"
+  version: "v1"
+  title: "simpleAPI"
+host: "localhost:8080"
+basePath: "/"
+schemes:
+- "http"
+paths:
+  /user/{username}:
+    get:
+      summary: "Get username"
+      operationId: "user_username_get"
+      parameters:
+      - name: "username"
+        in: "path"
+        description: "The format to return the response in, i.e. json."
+        required: true
+        type: "string"
+        default: "david"
+      responses:
+        200:
+          description: "Success response"
+          schema:
+            $ref: "#/definitions/inline_response_200"
+      x-swagger-router-controller: "swagger_server.controllers.default_controller"
+definitions:
+  inline_response_200:
+    properties:
+      customer_id:
+        type: "string"
+        example: "0"
+      first_name:
+        type: "string"
+        example: "David"
+      last_name:
+        type: "string"
+        example: "Suzuki"
+      username:
+        type: "string"
+        example: "david@adventure-works.com"

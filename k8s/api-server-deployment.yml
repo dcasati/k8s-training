@@ -1,0 +1,31 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: api-server-deployment
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: api-server
+    spec:
+      containers:
+      - name: api-server
+        image: dcasati/k8s_app:v1
+        imagePullPolicy: IfNotPresent
+        volumeMounts:
+        - name: db-credentials
+          mountPath: "/etc/secrets"
+          readOnly: true
+        - name: db-configuration
+          mountPath: "/etc/config"
+          readOnly: true
+        ports:
+        - containerPort: 8080 
+      volumes:
+      - name: db-credentials
+        secret:
+          secretName: api-server-credentials
+      - name: db-configuration
+        configMap: 
+          name: api-server-config
