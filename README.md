@@ -10,7 +10,12 @@ The target audience for this tutorial is someone that is looking for an end-to-e
 
 ## Solution Details
 
-TBD
+1. Provision Azure SQL.
+1. Provision Azure Container Registry (ACR) or Docker Hub.
+1. Setup ACR in the K8S cluster.
+1. Push the containers into ACR.
+1. Build  & Deploy the application.
+1. Setup a CI/CD on VSTS. 
 
 ## Prerequisites
 
