@@ -32,6 +32,54 @@ az login
 
 This will prompt you to sign in using a web browser to https://aka.ms/devicelogin and to enter the displayed code. This single step is needed in order to allow `az` to talk back to Azure.
 
+## Basic setup - Do this before proceeding
 
+The first thing you should do is to clone this repo as most of the examples here will do relative reference to files.
+
+```bash
+git clone https://github.com/dcasati/k8s-training.git
+```
+
+With that out of the way, we let's define some global variables. They will be used throughout the labs.
+
+1. Create the variables file
+
+    ```bash
+    cat << EOF > variables.sh
+    #!/usr/bin/env bash
+    # The name of our demo
+    export demoname=k8s-demo
+    # The data center and resource name for your resources
+    export resourcegroupname=${demoname}-rg
+    export location=eastus
+    # The logical server name: Use a random value or replace with your own value (do not capitalize)
+    export servername=${demoname}-$RANDOM
+    # Set an admin login and password for your database
+    export adminlogin=ServerAdmin
+    export password=PleaseChangeMe1
+    # The ip address range that you want to allow to access your DB
+    export startip="0.0.0.0"
+    export endip="0.0.0.0"
+    # The database name
+    export databasename=${demoname}
+    # Azure Container Registry
+    export acrname=${demoname}-acr-$RANDOM
+    EOF
+    ```
+> NOTE: Make sure you change the `adminlogin` and `password` values to avoid unnecessary surprises.
+
+1. Change it's permission and execute it to load the values
+    ```bash
+    chmod +x variables.sh
+    ./variables.sh
+    ```
+1. With these values, we can now create a Resource Group that will be used during our exercises.
+
+```bash
+az group create \
+    --name $demoname \
+    --resource-group $resourcegroupname \
+    --location $location
+```
 
 Next: [Configuring Azure SQL](02-configuring-azure-sql.md)

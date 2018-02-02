@@ -37,13 +37,4 @@ While Azure is used for basic infrastructure requirements the lessons learned in
 - [Setting up Kubernetes](sections/04-setting-k8s.md)
 - [Build and Deploy the Application](sections/05-build-and-deploy.md)
 - [Setting up a CI/CD pipeline](https://github.com/dcasati/pipelines-cookbook/blob/master/chapter1.md)
-
-## Creating Secrets
-```bash
-kubectl create secret generic api-server-credentials --from-file=./username password --from-file=./password
-```
-
-### Creating ConfigMaps
-```bash
-kubectl create configmap api-server-config --from-file=config
-```
+- [Cleaning up](sections/06-cleanup.md)
