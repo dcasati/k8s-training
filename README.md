@@ -21,13 +21,13 @@ The target audience for this tutorial is someone that is looking for an end-to-e
 
 For these exercises, you will need:
 
-* A Github account
-* An Azure account
-* A Visual Studio for Teams (VSTS) account at visualstudio.com
+* A [Github](https://github.com/) account
+* An [Azure](https://azure.microsoft.com/) account
+* A Visual Studio for Teams (VSTS) account at [visualstudio.com](https://www.visualstudio.com)
 
 This tutorial assumes you have access to a Kubernetes Cluster. The examples here will use [Microsoft Azure](https://azure.microsoft.com/en-us/). For more information please refer to the [Before You Begin](sections/01-before-you-begin.md) section.
 
-While Azure is used for basic infrastructure requirements the lessons learned in this tutorial can be applied to other platforms.
+While Azure is used for basic infrastructure requirements most of the lessons learned in this tutorial can be applied to other platforms that support Kubernetes.
 
 ## Sections
 
