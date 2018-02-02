@@ -29,3 +29,10 @@ spec:
       - name: db-configuration
         configMap: 
           name: api-server-config
+      resources:
+         limits:
+           cpu: ".50"
+           memory: 128Mi
+         requests:
+           cpu: ".25"
+           memory: 64Mi
