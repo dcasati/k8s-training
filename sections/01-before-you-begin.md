@@ -45,10 +45,10 @@ With that out of the way, we let's define some global variables. They will be us
 1. Create the variables file
 
     ```bash
-    cat << EOF > variables.sh
-    #!/usr/bin/env bash
     # The name of our demo
     export demoname=k8s-demo
+    cat << EOF > variables.sh
+    #!/usr/bin/env bash
     # The data center and resource name for your resources
     export resourcegroupname=${demoname}-rg
     export location=eastus
