@@ -7,7 +7,7 @@ In this section you will configure an instance of Azure SQL. This will be used a
     ```bash
     az sql server create \
         --name $servername \
-        --resource-name $resourcegroupname \
+        --resource-group $resourcegroupname \
         --location $location \
         --admin-user $adminlogin \
         --admin-password $password
