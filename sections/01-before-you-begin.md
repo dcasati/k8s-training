@@ -47,8 +47,7 @@ With that out of the way, we let's define some global variables. They will be us
     ```bash
     # The name of our demo
     export demoname=k8s-demo
-    cat << EOF > variables.sh
-    #!/usr/bin/env bash
+    cat << EOF > variables.rc
     # The data center and resource name for your resources
     export resourcegroupname=${demoname}-rg
     export location=eastus
@@ -68,10 +67,9 @@ With that out of the way, we let's define some global variables. They will be us
     ```
 > NOTE: Make sure you change the `adminlogin` and `password` values to avoid unnecessary surprises.
 
-1. Change it's permission and execute it to load the values
+1. source it to load the values
     ```bash
-    chmod +x variables.sh
-    ./variables.sh
+   source variables.rc
     ```
 1. With these values, we can now create a Resource Group that will be used during our exercises.
 
