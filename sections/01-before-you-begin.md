@@ -62,7 +62,7 @@ With that out of the way, we let's define some global variables. They will be us
     # The database name
     export databasename=${demoname}
     # Azure Container Registry
-    export acrname=${demoname}-acr-$RANDOM
+    export acrname=${demoname/-/}acr$RANDOM
     EOF
     ```
 > NOTE: Make sure you change the `adminlogin` and `password` values to avoid unnecessary surprises.
