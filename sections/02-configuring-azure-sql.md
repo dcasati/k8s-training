@@ -35,4 +35,4 @@ In this section you will configure an instance of Azure SQL. This will be used a
         --service-objective S0
     ```
 
- Next: [Configuring Azure Container Registry](sections/03-configuring-acr.md)
+ Next: [Configuring Azure Container Registry](03-configuring-acr.md)

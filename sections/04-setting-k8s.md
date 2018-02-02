@@ -19,7 +19,7 @@ az provider register -n Microsoft.ContainerService
         --node-count 2 \
         --generate-ssh-keys
     ```
-After a few minutes you should have you cluster up and running.
+    After a few minutes you should have you cluster up and running.
 
 1. To install kubectl
 
@@ -31,7 +31,8 @@ After a few minutes you should have you cluster up and running.
 1. Run the following az command:
 
     ```bash
-    az aks get-credentials --resource-group $resourcegroupname \
+    az aks get-credentials \
+    --resource-group $resourcegroupname \
     --name $demoname-cluster
     ```
     This will get the `KUBECONFIG` so you can later use with kubectl
@@ -41,4 +42,4 @@ After a few minutes you should have you cluster up and running.
     ```bash
     kubectl get pods,nodes 
     ```
-Next: [Build and Deploy the Application](sections/05-build-and-deploy.md)
+Next: [Build and Deploy the Application](05-build-and-deploy.md)
