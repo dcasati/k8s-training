@@ -27,4 +27,4 @@ In this section, we will setup our private registry on Azure Container Registry.
     az acr repository list --name $acrname --output table
     ```
 
-Next: [Setting up Kubernetes](sections/04-setting-k8s.md)
+Next: [Setting up Kubernetes](04-setting-k8s.md)
