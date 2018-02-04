@@ -21,6 +21,7 @@ The target audience for this tutorial is someone that is looking for an end-to-e
 
 For these exercises, you will need:
 
+* A [Docker Hub](https://hub.docker.com) account and Docker (the client) installed. You can get it [here](https://www.docker.com/community-edition#/download)
 * A [Github](https://github.com/) account
 * An [Azure](https://azure.microsoft.com/) account
 * A Visual Studio for Teams (VSTS) account at [visualstudio.com](https://www.visualstudio.com)
@@ -33,6 +34,7 @@ While Azure is used for basic infrastructure requirements most of the lessons le
 
 - [Before You Begin](sections/01-before-you-begin.md)
 - [Configuring Azure SQL](sections/02-configuring-azure-sql.md)
+- [Creating a Docker image](03A-creating-an-image.md)
 - [Configuring Azure Container Registry](sections/03-configuring-acr.md)
 - [Setting up Kubernetes](sections/04-setting-k8s.md)
 - [Build and Deploy the Application](sections/05-build-and-deploy.md)
