@@ -31,4 +31,4 @@ Forwarding from 127.0.0.1:3000 -> 3000
 
 Open a browser to 127.0.0.1:3000 to see the dashboards.
 
-![Grafana](sections/images/grafana.png)
+![Grafana](images/grafana.png)
