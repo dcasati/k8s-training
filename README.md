@@ -34,7 +34,7 @@ While Azure is used for basic infrastructure requirements most of the lessons le
 
 - [Before You Begin](sections/01-before-you-begin.md)
 - [Configuring Azure SQL](sections/02-configuring-azure-sql.md)
-- [Creating a Docker image](03A-creating-an-image.md)
+- [Creating a Docker image](sections/03A-creating-an-image.md)
 - [Configuring Azure Container Registry](sections/03-configuring-acr.md)
 - [Setting up Kubernetes](sections/04-setting-k8s.md)
 - [Build and Deploy the Application](sections/05-build-and-deploy.md)

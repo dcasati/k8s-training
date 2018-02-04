@@ -1,0 +1,41 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: api-server-deployment
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: api-server
+    spec:
+      containers:
+      - name: api-server
+        # Change the Azure Container Registry URL below
+        image: k8sdemoacr15022.azurecr.io/k8s_app:v1
+        imagePullPolicy: IfNotPresent
+        volumeMounts:
+        - name: db-credentials
+          mountPath: "/etc/secrets"
+          readOnly: true
+        - name: db-configuration
+          mountPath: "/etc/config"
+          readOnly: true
+        ports:
+        - containerPort: 8080
+        resources:
+          limits:
+            cpu: ".50"
+            memory: 128Mi
+          requests:
+            cpu: ".25"
+            memory: 64Mi
+      imagePullSecrets:
+      - name: myregistrykey
+      volumes:
+      - name: db-credentials
+        secret:
+          secretName: api-server-credentials
+      - name: db-configuration
+        configMap: 
+          name: api-server-config

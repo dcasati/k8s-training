@@ -16,7 +16,7 @@ In this section we will see the process of creating a docker image and how to ru
     ```
 1. Create the `tinywww.go` file
     ```bash
-    cat << tinywww.go > EOF
+    cat << 'EOF' > tinywww.go
     package main
 
     import (
@@ -44,7 +44,7 @@ In this section we will see the process of creating a docker image and how to ru
 
 1. Create a Dockerfile
     ```bash
-    cat << Dockerfile > EOF
+    cat << 'EOF' > Dockerfile
     FROM golang:alpine
 
     RUN mkdir /app
