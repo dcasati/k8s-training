@@ -1,5 +1,14 @@
 # Monitoring
 
+## Solution Overview
+
+| Solution | Purpose
+| - | -
+| Prometheus | Open source systems monitoring and alerting toolkit.
+| Grafana | Open source metric analytics & visualization suite.
+
+## Procedure
+
 1. Clone the prometheus-operator repository
 
     ```bash
@@ -21,3 +30,5 @@ Forwarding from 127.0.0.1:3000 -> 3000
 ```
 
 Open a browser to 127.0.0.1:3000 to see the dashboards.
+
+![Grafana](sections/images/grafana.png)
