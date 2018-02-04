@@ -90,4 +90,4 @@ In this section you will configure an instance of Azure SQL. This will be used a
         "zoneRedundant": false
     }
     ```
- Next: [Configuring Azure Container Registry](03-configuring-acr.md)
+ Next: [Creating a Docker image](03A-creating-an-image.md)
