@@ -138,3 +138,4 @@ The following steps will walk you through the process of `tagging` and `pushing`
 
 For tab completion of your docker commands take a look at [this](https://docs.docker.com/compose/completion/#bash)
 
+ Next: [Configuring Azure Container Registry](03-configuring-acr.md)
