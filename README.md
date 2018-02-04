@@ -40,3 +40,7 @@ While Azure is used for basic infrastructure requirements most of the lessons le
 - [Build and Deploy the Application](sections/05-build-and-deploy.md)
 - [Setting up a CI/CD pipeline](https://github.com/dcasati/pipelines-cookbook/blob/master/chapter1.md)
 - [Cleaning up](sections/06-cleanup.md)
+
+## Extras
+
+- [Monitoring](sections/monitoring.md)

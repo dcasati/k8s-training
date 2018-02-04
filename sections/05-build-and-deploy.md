@@ -36,6 +36,21 @@ Another construct on Kubernetes is called ConfigMaps which allows you to detach 
     ```bash
     kubectl create configmap api-server-config --from-file=config
     ```
+## Enable the use of ACR as the private registry
+
+1. Enable admin access to ACR
+    ```bash
+    az acr update --name $acrname --admin-enabled true
+    ```
+1. Retrieve the credentials for the registry
+    ```bash
+    acrUsername=$(az acr credential show --resource-group $resourcegroupname --name $acrname --query username -o tsv)
+    acrPassword=$(az acr credential show --resource-group $resourcegroupname --name $acrname --query passwords -o tsv | awk '/password\t/{print $2}')
+    ```
+1. Create the Secret to hold the ACR credentials
+    ```bash
+    kubectl create secret docker-registry myregistrykey --docker-server $loginServer --docker-username $acrUsername --docker-password $acrPassword  --docker-email ${MYEMAIL}
+    ```
 ## Deploying the application to our cluster
 
 1. Create a Kubernetes service
@@ -44,6 +59,36 @@ Another construct on Kubernetes is called ConfigMaps which allows you to detach 
     ```
 1. Deploy the application
     ```bash
-    kubectl apply -f k8s/api-server-deployment.yml
+    kubectl apply -f k8s/api-server-deployment-private-repo.yml
     ```
+
+## Testing our application
+
+1. Get the public IP of the service under the `EXTERNAL-IP` column.
+    ```bash
+    kubectl get svc -l app=api-server
+    ```
+
+1. Test the application
+    ```bash
+    curl -X GET --header 'Accept: application/json' 'http://${EXTERNAL-IP}:8080/user/david'
+    ```
+## Going further
+
+1. Enabling autoscale of the PODs
+    ```bash
+    kubectl autoscale deployment api-server-deployment --min=2 --max=5 --cpu-percent=80
+    ```
+1. Checking the Horizontal Autoscaling rules
+    ```bash
+    kubectl get hpa
+    NAME                    REFERENCE                          TARGETS           MINPODS   MAXPODS   REPLICAS   AGE
+    api-server-deployment   Deployment/api-server-deployment   <unknown> / 80%   2         5         1          43s
+    ```    
+1. To remove an autoscaling rule
+    ```bash
+    kubectl delete hpa/api-server-deployment
+    ```
+    For more information check this document: [Horizontal Pod Autoscaler Walkthrough](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale-walkthrough/)
+
 Next: [Setting up a CI/CD pipeline](https://github.com/dcasati/pipelines-cookbook/blob/master/chapter1.md)
