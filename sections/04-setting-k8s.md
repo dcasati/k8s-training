@@ -42,4 +42,15 @@ az provider register -n Microsoft.ContainerService
     ```bash
     kubectl get pods,nodes 
     ```
+## Going further
+
+1. Access the Kubernetes UI
+    ```bash
+    kubectl proxy
+    ```
+OUTPUT:
+    ```bash
+     kubectl proxy
+    Starting to serve on 127.0.0.1:8001
+    ```
 Next: [Build and Deploy the Application](05-build-and-deploy.md)
