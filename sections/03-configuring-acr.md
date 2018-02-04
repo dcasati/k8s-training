@@ -146,5 +146,10 @@ Now that we know the basics of how to create, publish, run and list our Docker i
     ```bash
     az acr repository list --name $acrname --output table
     ```
+> TIP: You might be running the above command frequently, so to save some keystrokes here's a good shortcut.
+```bash
+acr-list()(az acr repository list --name $acrname --output table)
+```
+Now everytime you need to see what's registered on your ACR repository you can just type `acr-list`.
 
 Next: [Setting up Kubernetes](04-setting-k8s.md)
