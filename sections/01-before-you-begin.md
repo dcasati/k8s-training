@@ -46,7 +46,7 @@ With that out of the way, we let's define some global variables. They will be us
 
     ```bash
     # The name of our demo
-    export demoname=k8s-demo
+    export demoname=k8s-demo-$RANDOM
     cat << EOF > variables.rc
     # The data center and resource name for your resources
     export resourcegroupname=${demoname}-rg
@@ -60,7 +60,7 @@ With that out of the way, we let's define some global variables. They will be us
     export startip="0.0.0.0"
     export endip="0.0.0.0"
     # The database name
-    export databasename=${demoname}
+    export databasename=${demoname}-$RANDOM
     # Azure Container Registry
     export acrname=${demoname/-/}acr$RANDOM
     EOF
