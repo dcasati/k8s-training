@@ -23,13 +23,6 @@ spec:
           readOnly: true
         ports:
         - containerPort: 8080
-        resources:
-          limits:
-            cpu: ".50"
-            memory: 128Mi
-          requests:
-            cpu: ".25"
-            memory: 64Mi
       imagePullSecrets:
       - name: myregistrykey
       volumes:
