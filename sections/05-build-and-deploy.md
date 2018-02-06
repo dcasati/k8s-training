@@ -14,6 +14,7 @@ To allow the REST API application access to the database, we will use a feature 
     mkdir secrets
     echo $adminlogin > secrets/username
     echo $password > secrets/password
+    cd secrets
     ```
 1. Create the secrets
 
