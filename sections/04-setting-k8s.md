@@ -49,8 +49,10 @@ az provider register -n Microsoft.ContainerService
     kubectl proxy
     ```
 OUTPUT:
+
     ```bash
      kubectl proxy
     Starting to serve on 127.0.0.1:8001
     ```
+    
 Next: [Build and Deploy the Application](05-build-and-deploy.md)
