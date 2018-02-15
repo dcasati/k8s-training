@@ -1,7 +1,3 @@
-
-[<img src=https://casatilabs.visualstudio.com/_apis/public/build/definitions/fb865317-48a2-44c7-9ae8-04d472a5a205/2/badge>](https://casatilabs.visualstudio.com/_apis/public/build/definitions/fb865317-48a2-44c7-9ae8-04d472a5a205/2/badge)
-
-
 # Kubernetes Training: End-to-End Experience.
 
 This tutorial walks you through and end-to-end deployment of an application to a Kubernetes cluster.
